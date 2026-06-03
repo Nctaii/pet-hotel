@@ -1,0 +1,164 @@
+:root {
+  --primary: #a855f7;
+  --primary-dark: #7e22ce;
+  --pink: #ec4899;
+  --bg: #faf5ff;
+  --card-bg: #ffffff;
+  --text: #3b0764;
+  --text-light: #6b7280;
+  --border: #e9d5ff;
+  --success: #16a34a;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Quicksand", "Segoe UI", system-ui, sans-serif;
+  font-weight: 500;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1, h2, h3, h4, .navbar .brand {
+  font-family: "Baloo 2", "Quicksand", sans-serif;
+  font-weight: 700;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+  background: linear-gradient(90deg, var(--primary), var(--pink));
+  box-shadow: 0 2px 12px rgba(168, 85, 247, 0.25);
+}
+.navbar a { color: #fff; text-decoration: none; font-size: 14px; opacity: 0.95; }
+.navbar a:hover { opacity: 1; text-decoration: underline; }
+.navbar .brand { font-weight: 700; font-size: 20px; }
+.nav-left { display: flex; align-items: center; gap: 20px; }
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.nav-user { color: #fff; font-size: 14px; }
+
+/* ===== NÚT ===== */
+button {
+  padding: 9px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.05s, opacity 0.2s;
+  background: var(--primary);
+  color: #fff;
+}
+button:hover { opacity: 0.9; }
+button:active { transform: scale(0.97); }
+
+.btn-success { background: var(--success); }
+.btn-danger { background: var(--danger); }
+.btn-warning { background: var(--warning); }
+.btn-pink { background: var(--pink); }
+
+/* ===== INPUT, SELECT, DATE ===== */
+input, select, .date-input {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+  background: #fff;
+}
+input:focus, select:focus, .date-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.15);
+}
+
+/* ===== CARD ===== */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 4px 14px rgba(168, 85, 247, 0.08);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(168, 85, 247, 0.18);
+}
+.card-list { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 14px; }
+
+/* ===== FORM ===== */
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 14px rgba(168, 85, 247, 0.1);
+}
+label { font-size: 14px; font-weight: 600; color: var(--text); }
+
+/* ===== BẢNG ===== */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 14px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(168, 85, 247, 0.08);
+}
+th {
+  background: linear-gradient(90deg, var(--primary-dark), var(--pink));
+  color: #fff;
+  padding: 14px 12px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+td {
+  padding: 13px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  color: #4b2868;
+  font-weight: 500;
+}
+tr:hover td { background: #faf5ff; }
+
+/* ===== TRANG TRUNG TÂM (login/register) ===== */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+.auth-box {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 30px rgba(168, 85, 247, 0.15);
+}
+.auth-box a { color: var(--primary-dark); font-weight: 600; }
+
+/* Badge trạng thái */
+.badge { padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; color: #fff; }
+
+/* Date picker lịch */
+.react-datepicker__day--disabled {
+  color: #ccc !important;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
