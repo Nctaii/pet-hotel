@@ -16,14 +16,13 @@ class User extends Authenticatable implements JWTSubject
         'password',
         'phone',
         'role',       // admin | staff | customer
-        'branch_id',  // chỉ dùng cho staff
+        'branch_id',  
     ];
 
     protected $hidden = [
         'password',
     ];
 
-    // Các hàm bắt buộc cho JWT
     public function getJWTIdentifier()
     {
         return $this->getKey();

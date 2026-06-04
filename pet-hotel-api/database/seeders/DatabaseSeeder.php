@@ -12,7 +12,6 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // Xóa dữ liệu cũ (để chạy lại nhiều lần không bị trùng)
         User::truncate();
         Branch::truncate();
         Room::truncate();

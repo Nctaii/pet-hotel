@@ -7,12 +7,12 @@ use App\Http\Controllers\BranchController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\BookingController;
 
-// ---- Public (không cần đăng nhập) ----
+// ---- Public ----
 Route::get('/rooms/{id}/booked-dates', [BookingController::class, 'bookedDates']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-// Xem chi nhánh & phòng không cần đăng nhập (để khách duyệt trước)
+// Xem chi nhánh & phòng
 Route::get('/branches', [BranchController::class, 'index']);
 Route::get('/branches/{id}', [BranchController::class, 'show']);
 Route::get('/rooms', [RoomController::class, 'index']);
